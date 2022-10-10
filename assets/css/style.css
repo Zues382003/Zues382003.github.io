@@ -212,7 +212,6 @@ display: inline-block;
     width:100%;
     color:azure;
     text-align: center;
-
 }
 
 #slider .text-heading{
@@ -223,7 +222,7 @@ display: inline-block;
 #slider .text-description{
     font-size: 15px;
     margin-top: 25px;
-    text-shadow:0 0 3px #000;
+    text-shadow: 2px 2px 1px #000;
 }
 
 #content{
