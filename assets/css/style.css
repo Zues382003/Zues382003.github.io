@@ -210,7 +210,6 @@ display: inline-block;
     height: 100%;
     position: absolute;
     top:0;
-    display: block;
 }
 
 #slider .text-content {
