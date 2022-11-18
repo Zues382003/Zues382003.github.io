@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/fonts_icon/themify-icons/themify-icons.css">
 </head>
 
-<body>
+<body onload="changeImage()">
     <div id="main">
         <div id="header">
             <!-- Begin: Nav -->
@@ -51,10 +51,28 @@
         </div>
 
         <div id="slider">
-            <div class="text-content">
-                <h2 class="text-heading">New York</h2>
-                <div class="text-description">The atmosphere in New York is lorem ipsum.</div>
+            <div class="slide" style="display:block ;">
+                <img class="imgSlider" src="./assets/img/Slider/Slide3.jpg" alt="">
+                <div class="text-content">
+                    <h2 class="text-heading">New York</h2>
+                    <div class="text-description">The atmosphere in New York is lorem ipsum.</div>
+                </div>
             </div>
+            <div class="slide" style="display:none ;">
+                <img class="imgSlider" src="./assets/img/Slider/Slide1.jpg" alt="">
+                <div class="text-content">
+                    <h2 class="text-heading">Los Angeles</h2>
+                    <div class="text-description">We had the best time playing at Vehice Beach!</div>
+                </div>
+            </div>
+            <div class="slide" style="display:none ;">
+                <img class="imgSlider" src="./assets/img/Slider/Slide2.jpg" alt="">
+                <div class="text-content">
+                    <h2 class="text-heading">Chicago</h2>
+                    <div class="text-description">Thank you, Chicago - A night we don't forget.</div>
+                </div>
+            </div>
+
         </div>
 
         <div id="content">
@@ -63,13 +81,15 @@
                 <h2 class="section-heading">THE BAND</h2>
                 <p class="section-sub-heading">We love music</p>
                 <p class="about-text">
-                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit,
                     sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut
                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt
                     mollit anim id est
                     laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim
@@ -192,7 +212,8 @@
                     <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
                     <a href="https://github.com/"><i class="ti-github"></i></a>
                 </div>
-                <p class="copyright">Powered by <a href="https://www.w3schools.com/w3css/defaulT.asp">w3.css</a> </p>
+                <p class="copyright">Powered by <a href="https://www.w3schools.com/w3css/defaulT.asp">w3.css</a>
+                </p>
                 <p class="Ten">Nguyễn Minh Chánh</p>
 
             </div>
@@ -302,6 +323,72 @@
             }
         }
 
+    </script>
+
+    <script>
+        // var index = 1;
+        // changeImage = function () {
+        //     var imgs = ["./assets/img/Slider/Slide3.jpg", "./assets/img/Slider/Slide1.jpg", "./assets/img/Slider/Slide2.jpg"];
+        //     document.getElementsByClassName('imgSlider').src = imgs[index];
+        //     index++;
+        //     if (index == 3) {
+        //         index = 0;
+        //     }
+        //     setInterval(changeImage, 3000);
+        // }
+
+        // const imageNames = ["./assets/img/Slider/Slide3.jpg", "./assets/img/Slider/Slide1.jpg", "./assets/img/Slider/Slide2.jpg"];
+        // let images = [];
+        // let position = 0;
+
+        // function loadImages() {
+        //     for (const name of imageNames) {
+        //         const img = new Image();
+        //         img.src = name;
+        //         images.push(img);
+        //     }
+        // }
+
+        // next = function () {
+        //     if (position == images.length - 1) {
+        //         position = 0;
+        //     }
+        //     else {
+        //         position++;
+        //     }
+        //     if (position == 0) {
+        //         images[position].style.display = "block";
+        //         images[position + 1].style.display = "none";
+        //         images[position + 2].style.display = "none";
+        //     }
+        //     if (position == 1) {
+        //         images[position].style.display = "block";
+        //         images[position + 1].style.display = "none";
+        //         images[position - 1].style.display = "none";
+        //     }
+        //     if (position == 2) {
+        //         images[position].style.display = "block";
+        //         images[position - 1].style.display = "none";
+        //         images[position - 2].style.display = "none";
+        //     }
+        //     document.getElementsByClassName('imgSlider').src = images[position].src;
+        // }
+        // setInterval(next, 1000);
+
+        var index = 0;
+        changeImage = function () {
+            var i;
+            var x = document.getElementsByClassName("slide");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            index++;
+            if (index > x.length) {
+                index = 1;
+            }
+            x[index - 1].style.display = "block";
+            setTimeout(changeImage, 3000);
+        }
     </script>
 </body>
 
